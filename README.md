@@ -21,6 +21,7 @@ TELEGRAM_SUPPORT_CHAT_ID=  # chat_id where the bot will forward all incoming mes
 # optional params
 HEROKU_APP_NAME=  # name of your Heroku app for webhook setup
 WELCOME_MESSAGE=  # text of a message that bot will write on /start command
+WELCOME_IMAGE_PATH= # path to welcome image. don't put in if it is not necessary
 
 # If user don't allow forward his messages Bot adds his comment with thue user_id to reply
 # Support team must reply to "bot reply", not to original user forwarded message
