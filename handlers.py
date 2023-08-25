@@ -1,11 +1,14 @@
 import os
 from telegram.ext import CommandHandler, MessageHandler, Filters
 
-from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_MESSAGE, WRONG_REPLY
+from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_MESSAGE, WRONG_REPLY, WELCOME_IMAGE_PATH
 
 
 def start(update, context):
-    update.message.reply_text(WELCOME_MESSAGE)
+    if WELCOME_IMAGE_PATH:
+        update.message.reply_photo(photo=open(WELCOME_IMAGE_PATH, 'rb'), caption=WELCOME_MESSAGE)
+    else:
+        update.message.reply_text(WELCOME_MESSAGE)
 
     user_info = update.message.from_user.to_dict()
 
